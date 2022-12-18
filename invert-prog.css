@@ -1,0 +1,19 @@
+:root {
+  -webkit-filter: invert(1);
+  filter: invert(1);
+}
+
+body img {
+  -webkit-filter: invert(1);
+  filter: invert(1);
+}
+
+body image {
+  -webkit-filter: invert(1);
+  filter: invert(1);
+}
+
+body video {
+  -webkit-filter: invert(1);
+  filter: invert(1);
+}

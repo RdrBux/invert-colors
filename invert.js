@@ -20,6 +20,7 @@ function addInverter() {
     link.rel = 'stylesheet';
     link.type = 'text/css';
     link.href = chrome.runtime.getURL('invert.css');
+    link.id = 'invert';
 
     // Append link element to HTML head
     head.appendChild(link);
