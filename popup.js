@@ -17,24 +17,22 @@ checkbox.addEventListener('change', () => {
     })
     .then(() => {
       // Insert/remove css properties based on new status
-      chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-        const currTab = tabs[0];
-        if (currTab) {
-          // Sanity check
+      chrome.tabs.query({}, function (tabs) {
+        for (let i = 0; i < tabs.length; i++) {
           if (checkbox.checked) {
             chrome.scripting.insertCSS({
               files: ['invert-prog.css'],
-              target: { tabId: currTab.id },
+              target: { tabId: tabs[i].id },
             });
           } else {
             chrome.scripting.removeCSS({
               files: [
                 'invert-prog.css' /* , chrome.runtime.getURL('invert.css') */,
               ],
-              target: { tabId: currTab.id },
+              target: { tabId: tabs[i].id },
             });
             chrome.scripting.executeScript({
-              target: { tabId: currTab.id },
+              target: { tabId: tabs[i].id },
               files: ['removeInvert.js'],
             });
           }
