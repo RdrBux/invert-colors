@@ -1,11 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  width: 20rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  width: fit-content;
 }
 
 .switcher {
   display: flex;
   align-items: center;
   gap: 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: rgb(57, 57, 57);
 }
 
 /* The switch - the box around the slider */

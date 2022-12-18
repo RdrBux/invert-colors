@@ -19,6 +19,7 @@ checkbox.addEventListener('change', () => {
       // Insert/remove css properties based on new status
       chrome.tabs.query({}, function (tabs) {
         for (let i = 0; i < tabs.length; i++) {
+          /* if (tabs[i].url.startsWith('http')) { */
           if (checkbox.checked) {
             chrome.scripting.insertCSS({
               files: ['invert-prog.css'],
@@ -36,6 +37,7 @@ checkbox.addEventListener('change', () => {
               files: ['removeInvert.js'],
             });
           }
+          /* } */
         }
       });
     });
