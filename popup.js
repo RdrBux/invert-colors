@@ -1,5 +1,4 @@
 const checkbox = document.querySelector('#active');
-console.log('hi');
 
 // Set checkbox value
 chrome.storage.local.get(['active']).then((result) => {
@@ -19,20 +18,19 @@ checkbox.addEventListener('change', () => {
       // Insert/remove css properties based on new status
       chrome.tabs.query({ url: '*://*/*' }, function (tabs) {
         for (let i = 0; i < tabs.length; i++) {
-          console.log(tabs[i].url);
           if (checkbox.checked) {
             chrome.scripting.insertCSS({
-              files: ['invert-prog.css'],
+              files: ['scripts/invert-prog.css'],
               target: { tabId: tabs[i].id },
             });
           } else {
             chrome.scripting.removeCSS({
-              files: ['invert-prog.css'],
+              files: ['scripts/invert-prog.css'],
               target: { tabId: tabs[i].id },
             });
             chrome.scripting.executeScript({
               target: { tabId: tabs[i].id },
-              files: ['removeInvert.js'],
+              files: ['scripts/removeInvert.js'],
             });
           }
         }

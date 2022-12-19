@@ -11,12 +11,12 @@
 	"content_scripts": [
 		{
 			"matches": ["<all_urls>"],
-			"js": ["invert.js"]
+			"js": ["scripts/invert.js"]
 		}
 	],
 	"web_accessible_resources": [
 		{
-			"resources": [ "invert.css"],
+			"resources": [ "scripts/invert.css"],
 			"matches": ["<all_urls>"]
 		}
 	],
@@ -31,7 +31,7 @@
         "default": "Ctrl+M",
         "mac": "MacCtrl+M"
       },
-      "description": "Opens hello.html"
+      "description": "Opens the options screen"
     }
   }
 }

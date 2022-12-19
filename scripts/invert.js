@@ -1,6 +1,3 @@
-/* "permissions": ["activeTab"],
-"host_permissions": ["<all_urls>"], */
-
 let active = null;
 chrome.storage.local
   .get(['active'])
@@ -19,7 +16,7 @@ function addInverter() {
     // set the attributes for link element
     link.rel = 'stylesheet';
     link.type = 'text/css';
-    link.href = chrome.runtime.getURL('invert.css');
+    link.href = chrome.runtime.getURL('scripts/invert.css');
     link.id = 'invert';
 
     // Append link element to HTML head
